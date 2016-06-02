@@ -40,8 +40,8 @@ public final class CoreTutorial {
      * @throws Exception in case of errors
      */
     public static void main(final String[] args) throws Exception {
-        new CoreTutorial(System.out).execute(NoBranchesClassTest.class);
-        new CoreTutorial(System.out).execute(WithBranchesClassTest.class);
+        new CoreTutorial(System.out).execute(NoBranchesClass.class);
+        new CoreTutorial(System.out).execute(WithBranchesClass.class);
     }
 
     /**
@@ -62,7 +62,7 @@ public final class CoreTutorial {
     private ExecutionDataStore run(String targetName) throws Exception {
         IRuntime runtime = new LoggerRuntime();
         RuntimeData data = new RuntimeData();
-        ClassLoader memoryClassLoader = createClassLoader(targetName, runtime, data);
+        ClassLoader memoryClassLoader = createClassLoader(targetName + "Test", runtime, data);
 
         org.junit.runner.JUnitCore.runClasses(memoryClassLoader.loadClass(targetName));
 
