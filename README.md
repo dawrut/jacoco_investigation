@@ -1,1 +1,1 @@
-This repository is for an issue reproduction example.
+This repository is for investigation for code coverage using Jacoco.
